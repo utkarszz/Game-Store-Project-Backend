@@ -25,10 +25,10 @@ const gameRoutes = require("./routes/gameRoutes");
 app.use("/api/auth", authRoutes);
 app.use("/api/games", gameRoutes);
 
-console.log("DEBUG MONGO_URL =>", process.env.MONGO_URL);
+console.log("DEBUG MONGODB_URI =>", process.env.MONGODB_URI);
 
 const PORT = process.env.PORT|| 5000;
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
   console.log("MongoDB connected");
   app.listen(PORT,()=>{
