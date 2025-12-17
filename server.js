@@ -2,7 +2,12 @@ console.log("🔥 SERVER FILE LOADED");
 
 const path = require("path");
 require("dotenv").config({
-  path: path.join(__dirname, ".env")
+  import dotenv from "dotenv";
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("DB connected"))
+  .catch(err => console.log(err));
 });
 
 const express = require("express");
