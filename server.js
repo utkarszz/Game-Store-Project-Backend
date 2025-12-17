@@ -1,19 +1,10 @@
 console.log("🔥 SERVER FILE LOADED");
 
-const path = require("path");
-require("dotenv").config({
-  import dotenv from "dotenv";
-dotenv.config();
-
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log("DB connected"))
-  .catch(err => console.log(err));
-});
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 
